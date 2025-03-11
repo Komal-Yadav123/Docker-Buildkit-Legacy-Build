@@ -1,0 +1,7 @@
+docker build -t abc:v1 .
+docker images
+docker run -it --name a1 abc:v1
+export DOCKER_BUILDKIT=0    # DOCKER_BUILDKIT=0 means docker uses legacy build
+docker build -t abc:v2 .
+
+export DOCKER_BUILDKIT=1  # means  docker uses builldkit and  it is by default setss on 1 so there isno need to set it again
